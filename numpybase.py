@@ -21,7 +21,10 @@ print (arrr)
 ar1=arr.dot(arrr)
 print(ar1)'''
 ar=np.array([[1,2,3],[2,3,1]])
-arr=np.array([[2,3,4],[1,2,3]])
-print(ar*arr)
+arr=np.array([[2,3,4],[1,3,3],[3,2,1]])
+#print(ar*arr)
 ar1=arr.T
-print(ar.dot(ar1))
+#print(ar.dot(ar1))
+print(ar1)
+ar2=np.linalg.inv(ar1)
+print(ar2)
