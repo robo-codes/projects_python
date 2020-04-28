@@ -36,5 +36,5 @@ print(np.linalg.det(ar3))       #detminant of metrix
 print(ar3.T)
 
 v=np.array([[1,2]])
-c=np.array([[2,3]])
+c=np.array([[2,3]])  
 print(v.dot(c))
