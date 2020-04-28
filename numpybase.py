@@ -26,5 +26,15 @@ arr=np.array([[2,3,4],[1,3,3],[3,2,1]])
 ar1=arr.T
 #print(ar.dot(ar1))
 print(ar1)
-ar2=np.linalg.inv(ar1)
+ar2=np.linalg.inv(ar1)  #matrix inverse!1
 print(ar2)
+print(ar2.dot(ar1))
+print(ar1.dot(ar2))
+ar3=np.diag([1,1,1,1,1,1,1,1])    #matrix will be formed with input in diagonal
+print(ar3)
+print(np.linalg.det(ar3))       #detminant of metrix
+print(ar3.T)
+
+v=np.array([[1,2]])
+c=np.array([[2,3]])
+print(v.dot(c))
