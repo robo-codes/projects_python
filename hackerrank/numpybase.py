@@ -20,8 +20,8 @@ print (arrr)
 #print (arr.var())
 ar1=arr.dot(arrr)
 print(ar1)'''
-ar=np.array([[1,2,3],[2,3,1]])
-arr=np.array([[2,3,4],[1,3,3],[3,2,1]])
+ar=np.array([[1,2],[3,1]])
+arr=np.array([[2,3],[1,3]])
 #print(ar*arr)
 ar1=arr.T
 #print(ar.dot(ar1))
@@ -36,5 +36,9 @@ print(np.linalg.det(ar3))       #detminant of metrix
 print(ar3.T)
 
 v=np.array([[1,2]])
-c=np.array([[2,3]])  
-print(v.dot(c))
+c=np.array([[2,3]])
+#print(v.dot(c))
+print(np.inner(v,c))
+print(np.diag(ar3).sum())
+print(np.trace(v))
+print(np.cov(v))
