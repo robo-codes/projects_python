@@ -296,3 +296,22 @@ if __name__ == '__main__':
     fptr.write(str(answer) + '\n')
 
     fptr.close()
+
+
+'''day 8 hackerrank'''
+
+n=int(input())
+pb=dict()
+for i in range(n):
+    x=input().split()
+    pb[x[0]]=x[1]
+while True:
+    try:
+        search=input()
+        if search in pb.keys():
+            output=''.join("%s=%r"%(search,int(pb[search])))
+            print (output)
+        else:
+            print("Not found")
+    except EOFError:
+            break
