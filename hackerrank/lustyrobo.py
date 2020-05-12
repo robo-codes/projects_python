@@ -368,7 +368,7 @@ if __name__ == '__main__':
             count+=1
         else:
             if count>max_count:
-                max_count==count
+                max_count=count
             count=0
     if count>max_count:
         max_count=count
