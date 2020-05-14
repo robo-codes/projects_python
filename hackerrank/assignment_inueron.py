@@ -22,9 +22,9 @@ print(full_name)
 '''(3) Write a Python program to find the volume of a sphere with diameter 12 cm.
 Formula: V=4/3 * π * r(cube 3)'''
 
-r=6
-pie=np.pi
-v=((4/3)*pie*r*r*r)
+r = 6
+pie = 3.14
+v = ((4/3)*pie*r*r*r)
 print(v)
 
 
