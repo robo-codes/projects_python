@@ -373,3 +373,30 @@ if __name__ == '__main__':
     if count>max_count:
         max_count=count
     print(max_count)
+
+
+'''day 11 2d arrays'''
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+if __name__ == '__main__':
+    arr = []
+    a = []
+    for _ in range(6):
+        arr = [int(arr_temp) for arr_temp in input().strip().split(' ')]
+        a.append(arr)
+    suml=[]
+    def calculate(i,j):
+        return(a[i][j] + a[i][j+1] + a[i][j+2] + a[i+1][j+1] + a[i+2][j] + a[i+2][j+1] + a[i+2][j+2])
+    for i in range(0,4):
+        for j in range(0,4):
+            sum=calculate(i,j)
+            suml.append(sum)
+    print(max(suml))
