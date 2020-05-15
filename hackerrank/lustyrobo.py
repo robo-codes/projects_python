@@ -464,3 +464,24 @@ author=input()
 price=int(input())
 new_novel=MyBook(title,author,price)
 new_novel.display()
+
+'''day 14 scope'''
+
+class Difference:
+    def __init__(self, a):
+        self.__elements = a
+
+    def computeDifference(self):
+        self.maximumDifference = max(self.__elements) - min(self.__elements)
+
+
+
+# End of Difference class
+
+_ = input()
+a = [int(e) for e in input().split(' ')]
+
+d = Difference(a)
+d.computeDifference()
+
+print(d.maximumDifference)
