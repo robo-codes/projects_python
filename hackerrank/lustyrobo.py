@@ -400,3 +400,40 @@ if __name__ == '__main__':
             sum=calculate(i,j)
             suml.append(sum)
     print(max(suml))
+
+
+'''day 12 inheritance'''
+
+class Person:
+	def __init__(self, firstName, lastName, idNumber):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.idNumber = idNumber
+	def printPerson(self):
+		print("Name:", self.lastName + ",", self.firstName)
+		print("ID:", self.idNumber)
+
+class Student(Person):
+
+    def __init__(self, firstName, lastName, idNumber, scores):
+        super().__init__(firstName, lastName, idNumber)
+        self.scores = scores
+    #   Function Name: calculate
+    #   Return: A character denoting the grade.
+    #
+    # Write your function here
+    def calculate(self):
+        a = sum(self.scores)/len(self.scores)
+        if a<40:
+            return("T")
+        elif 40<=a<55:
+            return("D")
+        elif 55<=a<70:
+            return("P")
+        elif 70<=a<80:
+            return("A")
+        elif 80<=a<90:
+            return("E")
+        else:
+            return("O")
+line = input().split()
