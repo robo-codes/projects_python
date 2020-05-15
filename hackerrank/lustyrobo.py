@@ -516,4 +516,19 @@ head=None
 for i in range(T):
     data=int(input())
     head=mylist.insert(head,data)
-mylist.display(head); 	  
+mylist.display(head);
+
+
+'''day 16 exception handling'''
+
+#!/bin/python3
+
+import sys
+
+
+S = input().strip()
+try:
+    S=int(S)
+    print(S)
+except:
+    print("Bad String")
