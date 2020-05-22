@@ -618,3 +618,24 @@ my_calculator = Calculator()
 s = my_calculator.divisorSum(n)
 print("I implemented: " + type(my_calculator).__bases__[0].__name__)
 print(s)
+
+
+'''day 20 sorting(bubble sort)'''
+
+import sys
+
+n = int(input().strip())
+a = list(map(int, input().strip().split(' ')))
+numSwap = 0
+for i in range(len(a)):
+    for j in range(len(a)-1):
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
+            numSwap+=1
+    if numSwap==0:
+        break
+firstElement = a[0]
+lastElement = a[n-1]
+print("Array is sorted in",numSwap,"swaps.")
+print("First Element:",firstElement)
+print("Last Element:",lastElement)
