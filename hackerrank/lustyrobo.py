@@ -813,4 +813,24 @@ for i in range(T):
     data=int(input())
     head=mylist.insert(head,data)
 head=mylist.removeDuplicates(head)
-mylist.display(head); 
+mylist.display(head);
+
+'''day 25 running time and complexity'''
+
+def is_prime(n):
+    if n == 1:
+        return False
+    else:
+        sqrt = int(n**0.5)
+        for i in range(2, sqrt + 1):
+            if ((n % i) == 0) and (i != n):
+                return False
+        return True
+
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    if is_prime(n):
+        print("Prime")
+    else:
+        print("Not prime")
