@@ -834,3 +834,25 @@ for _ in range(T):
         print("Prime")
     else:
         print("Not prime")
+
+
+'''day 26 nested logic'''
+
+from datetime import date
+actual_date = map(int, input().split(' '))
+actual_date = list(actual_date)
+return_date = map(int, input().split(' '))
+return_date = list(return_date)
+actual_date = date(day = actual_date[0], month = actual_date[1], year = actual_date[2])
+return_date = date(day = return_date[0], month = return_date[1], year = return_date[2])
+fine = 0
+if actual_date > return_date:
+    if actual_date.year == return_date.year:
+        if actual_date.month == return_date.month:
+            fine = 15 * (actual_date.day - return_date.day)
+        else:
+            fine = 500 * (actual_date.month - return_date.month)
+    else:
+        if actual_date.year > return_date.year:
+            fine = 10000
+print(int(fine))
