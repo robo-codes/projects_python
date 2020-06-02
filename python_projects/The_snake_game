@@ -13,6 +13,16 @@ wndw.setup(width=700, height=700)
 wndw.tracer(0)
 segment = []
 
+#writting the gameover
+over = turtle.Turtle()
+over.color("white")
+over.speed(0)
+over.penup()
+over.shape("triangle")
+over.hideturtle()
+over.goto(0, 10)
+#over.write("thanks for playing click arrows to restart", align = "center", font=("Arial", 20, 'bold'))
+
 #writting the score
 pen = turtle.Turtle()
 pen.speed(0)
@@ -43,15 +53,19 @@ food.goto(0, 100)
 #functions used
 def move_up():
     if head.direction != "down":
+        over.clear()
         head.direction = "up"
 def move_down():
     if head.direction != "up":
+        over.clear()
         head.direction = "down"
 def move_left():
     if head.direction != "right":
+        over.clear()
         head.direction = "left"
 def move_right():
     if head.direction != "left":
+        over.clear()
         head.direction = "right"
 
 #keyboard key bindings with game
@@ -86,6 +100,7 @@ while True:
         head.goto(0, 0)
         head.direction = "stop"
         delay = 0.1
+        over.write("thanks for playing click arrows to restart", align = "center", font=("Arial", 20, 'bold'))
 
         #clearing the scores when it touches
         pen.clear()
@@ -141,6 +156,7 @@ while True:
             for s in segment:
                 s.goto(1000,1000)
             segment.clear()
+            over.write("thanks for playing click arrows to restart", align = "center", font=("Arial", 20, 'bold'))
             pen.clear()
             score = 0
             pen.write("Score: 0   High Score: {}".format(high_score), align = "center", font=("Arial", 25, 'italic'))
