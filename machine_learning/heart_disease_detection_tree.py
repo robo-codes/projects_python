@@ -8,7 +8,7 @@ heart_data = pd.read_csv(heart_disease_dataset_path)
 features = ['age','sex','trestbps','chol','fbs','restecg','thalach','exang','oldpeak','slope','ca','thal']
 X = heart_data[features]
 y = heart_data['target']
-print("original value :\n",heart_data['target'].head())
+print("original value :\n",heart_data['target'].head().tolist())
 #train_X, valid_X, train_y, valid_y = train_test_split(X, y, random_state=1)
 heart_data = DecisionTreeRegressor(random_state=1)
 heart_data.fit(X, y)
