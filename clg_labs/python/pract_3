@@ -1,0 +1,96 @@
+'''(3.1) Create a Python program to read a text file and do following:
+        I. Print no. of lines
+        II. Print no. of unique words
+        III. Store each word with its occurrence in dictionary
+
+#I. Print no. of lines
+
+f0 = input("Enter file name: ")
+lines = 0
+with open(f0 , 'r') as f:
+    for line in f:
+        lines += 1
+print("Number of lines: ",lines)
+
+#II. Print no. of unique words
+
+print("\nunique words :\n")
+count = {}
+for w in open(f0).read().split():
+    if w in count:
+       count[w]+=1
+    else:
+       count[w]=1
+for words,times in count.items():
+    print(words,"is fond",times,"times")
+
+#III. Store each word with its occurrence in dictionary
+
+print("\nOccurrence of word in file :\n")
+word=input("Enter the word to be searched : ")
+o=0
+with open(f0,'r') as f:
+    for line in f:
+        words=line.split()
+        for i in words:
+            if(i==word):
+                o=o+1
+print("No. Of Occurrences word : ",o)'''
+
+'''(3.2) Write a Python program to read a text file and do following:
+        1. Print no. of words
+        2. Print no. statements
+
+f0 = input("Enter the file name : ")
+words = 0
+statements = 0
+with open(f0 , 'r') as f:
+    for line in f:
+        statements += 1
+        word = line.split()
+        words += len(word)
+print("Number of words in file are : ",words)
+print("Number of statements in file are : ",statements)
+'''
+
+
+
+'''(3.3) Write a python program to append data to an existing file 'python.py'.
+        Read data to be appended from the user.
+        Then display the contents of entire file.
+
+f0 = input("Enter the name of file to be appended : ")
+fin = open(f0 , "r")
+data = fin.read()
+fin.close()
+f1 = input("Enter the name of destination file : ")
+fout = open(f1 , "a")
+fout.write(data)
+print("Data appended successfully.")
+fout.close()
+'''
+
+'''(3.4 )Write a python program to retrieve name and date of birth (mm-dd-yyyy) of students from a given file student.txt
+import re
+f0 = 'student.txt'
+with open(f0 , 'r') as f:
+	file = f.read()
+	a = file.split('\n')
+res = []
+for item in a:
+	b = str(item).split(' ')
+	res.append(b)
+for item in res:
+    print(item)'''
+
+'''(3.5) Write a python program to know the current working directory and to print all contents of the current directory.
+        What changes we need to make in the program if we wish to display the contents of only 'mysub' directory available in current directory?'''
+
+import os
+current_dir = os.getcwd()
+print(current_dir)
+print("\n CONTENT OF CURRENT DIRECTORY : \n")
+print(os.listdir(os.getcwd()))
+sub_dir = input("\n Enter the name of sub directory : ")
+print("\n CONTENT OF SUB DIRECTORY : ",sub_dir,"\n")
+print(os.listdir(sub_dir))
