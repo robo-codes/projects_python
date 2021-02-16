@@ -86,7 +86,7 @@ for item in res:
 '''(3.5) Write a python program to know the current working directory and to print all contents of the current directory.
         What changes we need to make in the program if we wish to display the contents of only 'mysub' directory available in current directory?'''
 
-import os
+'''import os
 current_dir = os.getcwd()
 print(current_dir)
 print("\n CONTENT OF CURRENT DIRECTORY : \n")
@@ -94,3 +94,11 @@ print(os.listdir(os.getcwd()))
 sub_dir = input("\n Enter the name of sub directory : ")
 print("\n CONTENT OF SUB DIRECTORY : ",sub_dir,"\n")
 print(os.listdir(sub_dir))
+'''
+
+fname = input("Enter file name: ")
+
+with open(fname, 'r') as f:
+    for line in f:
+        l=line.upper()
+        print(l)
