@@ -1,0 +1,83 @@
+import urllib.request
+import json
+
+data = {
+        {
+          "Inputs": {
+            "input1": {
+              "ColumnNames": [
+                "male",
+                "age",
+                "currentSmoker",
+                "cigsPerDay",
+                "BPMeds",
+                "prevalentStroke",
+                "prevalentHyp",
+                "diabetes",
+                "totChol",
+                "sysBP",
+                "diaBP",
+                "BMI",
+                "heartRate",
+                "glucose"
+              ],
+              "Values": [
+                [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "0",
+                  "0",
+                  "0",
+                  "1",
+                  "180",
+                  "120",
+                  "20",
+                  "100",
+                  "129"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1",
+                  "10",
+                  "1",
+                  "1",
+                  "1",
+                  "0",
+                  "180",
+                  "100",
+                  "70",
+                  "29",
+                  "130",
+                  "156"
+                ]
+              ]
+            }
+        },
+    "GlobalParameters":  {
+        'Optimization tolerance': "1",
+    }
+}
+
+body = str.encode(json.dumps(data))
+
+url = 'https://ussouthcentral.services.azureml.net/workspaces/ab8e1cecc5f94c0bba414b2d9ea77445/services/3c4c419601e142ae9eaf95b8c550afb6/execute?api-version=2.0&format=swagger'
+api_key = 'sX0v9tXPA1U9dz8w5tJx7mZGpHKH2KGi22ipejLnIxB28BInhO6ro3dKClZ1+dKWf/o+OWxJrUuc+TVby/CiLw=='
+headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ sX0v9tXPA1U9dz8w5tJx7mZGpHKH2KGi22ipejLnIxB28BInhO6ro3dKClZ1+dKWf/o+OWxJrUuc+TVby/CiLw==)}
+
+req = urllib.request.Request(url, body, headers)
+
+try:
+    response = urllib.request.urlopen(req)
+
+    result = response.read()
+    print(result)
+except urllib.error.HTTPError as error:
+    print("The request failed with status code: " + str(error.code))
+
+    # Print the headers - they include the requert ID and the timestamp, which are useful for debugging the failure
+    print(error.info())
+    print(json.loads(error.read().decode("utf8", 'ignore')))

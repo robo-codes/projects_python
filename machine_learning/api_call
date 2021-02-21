@@ -2,36 +2,8 @@ import requests
 
 url = "https://ussouthcentral.services.azureml.net/workspaces/ab8e1cecc5f94c0bba414b2d9ea77445/services/199028c672844aacaa2faa5144e86f85/execute?api-version=2.0&details=true"
 
-payload="{\r\n\r\n        \"Inputs\": {\r\n\r\n                \"input1\":\r\n                {\r\n                    \"ColumnNames\": [\"male\", \"age\", \"currentSmoker\", \"cigsPerDay\", \"BPMeds\", \"prevalentStroke\", \"prevalentHyp\", \"diabetes\", \"totChol\", \"sysBP\", \"diaBP\", \"BMI\", \"heartRate\", \"glucose\"],\r\n                    \"Values\": [ [ \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\" ], [ \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\", \"\" ], ]\r\n                },        },\r\n            \"GlobalParameters\": {\r\n}\r\n    }"
+payload="{\r\n\r\n        \"Inputs\": {\r\n\r\n                \"input1\":\r\n                {\r\n                    \"ColumnNames\": [\"male\", \"age\", \"currentSmoker\", \"cigsPerDay\", \"BPMeds\", \"prevalentStroke\", \"prevalentHyp\", \"diabetes\", \"totChol\", \"sysBP\", \"diaBP\", \"BMI\", \"heartRate\", \"glucose\"],\r\n                    \"Values\": [ [ \"1\", \"59\", \"1\", \"13\", \"1\", \"1\", \"1\", \"1\", \"150\", \"90\", \"200\", \"27\", \"194\", \"91\" ], [ \"1\", \"55\", \"0\", \"0\", \"0\", \"0\", \"1\", \"1\", \"110\", \"70\", \"100\", \"20\", \"110\", \"77\" ], ]\r\n                },        },\r\n            \"GlobalParameters\": {\r\n}\r\n    }"
 
-for i in range(0,1):
-    male = int(input("enter your sex: "))
-    age = int(input("enter your age: "))
-    currentSmoker =  int(input("enter 1 if you are a current smoker: "))
-    cigsPerDay =  int(input("enter no of cigarettes you smoke per day: "))
-    BPMeds =  int(input("enter 1 if you are currently taking BP medicines: "))
-    prevalentStroke =  int(input("enter 1 if you have prevalent Stroke: "))
-    prevalentHyp = int(input("enter 1 if you have prevalent hyper tension: "))
-    diabetes =  int(input("enter 1 if you have diabetes: "))
-    totChol = int(input("enter your cholestrol level: "))
-    sysBP = int(input("enter your count of systolic BP: "))
-    diaBP = int(input("enter your count of diabolic BP: "))
-    BMI = int(input("enter your BMI count: "))
-    heartRate = int(input("enter your current heart rate: "))
-    glucose = int(input("enter your glucose level: "))
-    payload[male] = male
-    payload[age] = age
-    payload[currentSmoker] =currentSmoker
-    payload[cigsPerDay] = cigsPerDay
-    payload[BPMeds] = BPMeds
-    payload[prevalentStroke] = prevalentStroke
-    payload[prevalentHyp] = prevalentHyp
-    payload[diabetes] = diabetes
-    payload[sysBP] = sysBP
-    payload[diaBP] = diaBP
-    payload[BMI] = BMI
-    payload[heartRate] = heartRate
-    payload[glucose] = glucose
 headers = {
   'Authorization': 'bearer sX0v9tXPA1U9dz8w5tJx7mZGpHKH2KGi22ipejLnIxB28BInhO6ro3dKClZ1+dKWf/o+OWxJrUuc+TVby/CiLw==',
   'Content-Type': 'application/json'
@@ -40,3 +12,7 @@ headers = {
 response = requests.post(url, headers=headers, data=payload)
 
 print(response.text)
+
+
+def app(request):
+    return response

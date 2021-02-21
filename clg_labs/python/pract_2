@@ -1,0 +1,141 @@
+# To write a Python Program to find the maximum from a list of numbers.
+'''list = [1, 5, 2, 11, 3]
+list.sort()
+print("max value is : ", list[-1])'''
+
+'''Write a Python program which will return the sum of the numbers in the array, returning 0 for an
+empty array. Except the number 13 is very unlucky, so it does not count and number that come
+immediately after 13 also do not count. Example : [1, 2, 3, 4] = 10 [1, 2, 3, 4, 13] = 10 [13, 1, 2,
+3, 13] = 5'''
+
+'''def sum(n):
+    i = 0
+    sum = 0
+    while i < len(n):
+        if(n[i] == 13):
+            i+=2
+            continue
+        sum+=n[i]
+        i+=1
+    return sum
+
+N = int(input("enter totel numbers to be entered : "))
+n = []
+for i in range(0, N):
+    value = int(input("enter value : "))
+
+    n.append(int(value))
+print(sum(n))'''
+
+'''Write a Python program which takes a list and returns a list with the elements "shifted
+left by one position" so [1, 2, 3] yields [2, 3, 1]. Example: [1, 2, 3] → [2, 3, 1] [11, 12, 13]
+→ [12, 13, 11]'''
+
+'''def LS(l):
+     t=l[0]
+     for i in range(len(l)-1):
+          l[i]=l[i+1]
+          l[i+1]=t
+n1=[1,2,3]
+n2=[11,12,13]
+a=LS(n1)
+b=LS(n2)
+print("left shift of [1,2,3] : ",n1)
+print("left shift of [11,12,13] : ",n2)
+'''
+
+#Write a program to convert a list of characters into a string
+
+'''N = int(input("enter length of list : "))
+n = []
+for i in range(N):
+    value = input(" : ")
+    n.append(value)
+print("list is :",n)
+print("string is : ",''.join(n))
+'''
+
+'''PRACTICAL : 2-5
+AIM : Write a Python program
+1)	To generate  a list except for the first 5 elements, where the values are square of numbers between 1 and 30(both included)
+'''
+'''def square():
+    l = []
+    for i in range(1,31):
+        l.append(i**2)
+    print(l[5:])
+square()
+'''
+
+'''AIM : Write a Python program
+2)	To generate a list of first and last 5 elements where the values are square of numbers between 1 and 30.
+'''
+
+'''def square():
+    l = []
+    for i in range(1,31):
+        l.append(i**2)
+    print("square of first five elements",l[:5])
+    print("square of last five elements",l[-5:])
+square()'''
+
+'''PRACTICAL : 2-6
+AIM : Write a python program to print numbers given in the list after removing even numbers from it.
+'''
+'''
+N = int(input("enter totel numbers to be entered : "))
+n = []
+for i in range(0, N):
+    value = int(input("enter value : "))
+    n.append(int(value))
+ODD_NUM=list(filter(lambda x:x%2==1,n))
+print("ODD numbers are : ",ODD_NUM)
+'''
+
+'''PRACTICAL 2.6
+AIM : Write a python program to print numbers given in the list after removing even numbers from it.
+'''
+'''
+string = input("Enter a string : ")
+dict={}
+for i in string:
+    keys=dict.keys()
+    if i in keys:
+        dict[i]+=1
+    else:
+        dict[i]=1
+print("Dictionary is : ",dict)
+'''
+
+'''Write a program to use split and join methods in the string and trace a birthday with a
+dictionary data structure.'''
+
+'''
+N = int(input("enter number of people : "))
+birthday = dict(input().split() for i in range(N))
+list = birthday.values()
+date = input("enter birthdate in dd/mm/yyyy : ")
+B = date.split('/')
+A = "/".join(B)
+flag = 0
+for name,birthday in birthday.items():
+    if date == A:
+        flag = 1
+        break
+    else:
+        flag = 0
+if(flag == 1):
+    print("the birthday of",name,"is :",birthday)
+else:
+    print(birthday,"is not found.")
+'''
+
+#Write a python program to sort a dictionary by value.
+import operator
+N = int(input("enter size of dictionary : "))
+D = dict(input().split() for i in range(N))
+print('Original dictionary : ',D)
+sorted_D = sorted(D.items(), key=operator.itemgetter(0))
+print('Dictionary in ascending order by value : ',sorted_D)
+sorted_D = sorted(D.items(), key=operator.itemgetter(0),reverse=True)
+print('Dictionary in descending order by value : ',sorted_D)
