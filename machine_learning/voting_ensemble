@@ -1,0 +1,39 @@
+# Voting Ensemble for Classification
+import pandas as pd
+import missingno as msno
+from sklearn import model_selection
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+from sklearn.ensemble import VotingClassifier
+
+data = pd.read_csv(r'C:\Users\User\Documents\framingham1.csv')
+names = ['male', 'age', 'currentSmoker', 'cigsPerDay', 'BPMeds', 'prevalentStroke', 'prevalentHyp', 'diabetes', 'totChol','sysBP','diaBP','BMI','heartRate','Target']
+
+msno.matrix(data)
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy='most_frequent')
+imputer.fit(data)
+imputed_data = imputer.transform(data)
+imputed_data = pd.DataFrame(imputed_data,columns=data.columns)
+print(imputed_data)
+
+array = imputed_data.values
+X = array[:,0:13]
+Y = array[:,13]
+seed = 7
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+
+# create the sub models
+estimators = []
+model1 = LogisticRegression()
+estimators.append(('logistic', model1))
+model2 = DecisionTreeClassifier()
+estimators.append(('cart', model2))
+model3 = SVC()
+estimators.append(('svm', model3))
+
+# create the ensemble model
+ensemble = VotingClassifier(estimators)
+results = model_selection.cross_val_score(ensemble, X, Y, cv=kfold)
+print(results.mean())

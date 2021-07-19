@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestRegressor
 #from sklearn.tree import DecisionTreeRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
-house_rent_file_path = r'C:\machine_learning\houseRent\housing_train.csv'
+house_rent_file_path = r'C:\Users\User\Downloads\parkinson.csv'
 home_data = pd.read_csv(house_rent_file_path)
 features = ['sqfeet', 'beds', 'baths']
 X = home_data[features]

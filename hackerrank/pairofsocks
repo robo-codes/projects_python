@@ -1,0 +1,19 @@
+from collections import Counter
+
+
+def sockMerchant(n, ar):
+    b = Counter(ar)
+    print(b)
+    return sum([b[i]//2 for i in b])
+
+n = int(input().strip())
+
+ar = list(map(int, input().rstrip().split()))
+
+result = sockMerchant(n, ar)
+print(result)
+
+'''
+ar = list(map(int, input().rstrip().split()))
+print(sorted(ar))
+'''

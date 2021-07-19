@@ -1,0 +1,96 @@
+#9.1 Write a python program to implement ceaser cipher
+'''
+def encrypt(text,s):
+    result = ""
+    for i in range(len(text)):
+        char = text[i]
+        if (char.isupper()):
+            result += chr((ord(char) + s-65) % 26 + 65)
+        else:
+            result += chr((ord(char) + s - 97) % 26 + 97)
+    return result
+text = input("Enter the text for encription : ")
+s = 4
+print ("Plain Text : " + text)
+print ("Shift pattern : " + str(s))
+print ("Cipher: " + encrypt(text,s))
+'''
+
+#9.2 Write a python program to implement brute force attack
+'''
+message = input("Enter the text : ")
+message = message.upper()
+LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+num = 0
+for key in range(len(LETTERS)):
+    translated = ""
+    for symbol in message:
+        if symbol in LETTERS:
+           num = LETTERS.find(symbol)
+           num = num - key
+        if num<0:
+            num = num + len(LETTERS)
+            translated = translated + LETTERS[num]
+        else:
+            translated = translated + symbol
+    print("Hacking key #%s: %s" % (key, translated))
+'''
+
+#9.3 Write a python program to implement reverse ceaser cipher
+'''
+message = input("Enter the text : ")
+translated=""
+print("The plain text is:",message)
+i=len(message)-1
+while(i>=0):
+    translated=translated+message[i]
+    i=i-1
+print("The cipher text is:",translated)
+'''
+
+#9.4 Write a python program to implement Transposition cipher
+'''
+def encryptmsg(key,message):
+    ciphertext = ['']*key
+    for col in range(key):
+        pos = col
+        while pos < len(message):
+            ciphertext[col] += message[pos]
+            pos += key
+    return ''.join(ciphertext)
+message = input("Enter the message : ")
+key = 5
+ciphertext = encryptmsg(key,message)
+print("Cipher Text is:")
+print(ciphertext+"|")
+'''
+
+#9.5 Write a python program to implement Block cipher(SHA1, MD5)
+'''
+import hashlib
+str1=input("Enter String for hashing : ")
+hash_object=hashlib.md5(str1.encode())
+print("MD5's hashed object : ",hash_object.hexdigest())
+hash_object1=hashlib.sha1(str1.encode())
+print("SHA1's hashed object : ",hash_object1.hexdigest())
+'''
+
+#9.6 Write a python program to implement RSA Algorithm
+'''
+import binascii
+n = 9516311845790656153499716760847001433441357
+e = 65537
+d = 5617843187844953170308463622230283376298685
+message = input("Enter the message : ")
+hex_data = binascii.hexlify(message.encode())
+print("Hex data : ",hex_data)
+pt=int(hex_data,16)
+print("PT : ",pt)
+if pt > n:
+    raise Exception("PT is large")
+enc_text = pow(pt,e,n)
+print("Encrypted text : ",enc_text)
+dec_text = pow(enc_text,d,n)
+print("Decrypted text : ",dec_text)
+print("Message : ",binascii.unhexlify(hex(dec_text)[2:]).decode())
+'''

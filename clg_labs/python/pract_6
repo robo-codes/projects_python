@@ -1,0 +1,55 @@
+#6.1 Write a python program to retrieve strings starting with m and having 5 characters.
+'''
+import re
+word=input("Enter the word : ")
+l=len(word)
+word=word.lower()
+if(re.match("m",word) and l==5):
+    print("Word you entered is valid.")
+else:
+    print('Word must start with "m"')
+'''
+
+#6.2 Write a Python program to check that a string contains only a certain set of characters (in this case a-z, A-Z and 0-9).
+'''
+import re
+def specific_char(string):
+    string=re.search(r'[a-zA-Z0-9.]',string)
+    return bool(string)
+char = input("Enter characters you want to check : ")
+print(specific_char(char))
+'''
+
+#6.3 Write a Python program to match a string that contains only upper and lowercase letters, numbers, and underscores using Regular Expression
+'''
+import re
+def text_match(text):
+    pattern='^[a-zA-Z0-9_]*$'
+    if(re.search(pattern, text)):
+        return 'Pattern matched !'
+    else:
+        return 'Does not match with the pattern.'
+i = input("Enter string to check the pattern : ")
+print(text_match(i))
+'''
+
+#6.4 Write a Python program to find the substrings within a string using Regular Expression
+'''
+import re
+text = input("Enter a string to find a substrings within it : ")
+pattern = input("Enter the substring you want to find : ")
+for match in re.findall(pattern,text):
+    print('Found "%s"'% match)
+'''
+
+#6.5 Write a Python program to Validate an Email Address Using Python
+'''
+import re
+def validate_email(Email):
+    if re.match("^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$",Email):
+        return 'Valid Email'
+    else:
+        return 'Invalid Email'
+Email = input("Enter your email : ")
+print(validate_email(Email))
+'''
