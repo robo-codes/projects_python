@@ -1,2 +1,14 @@
-import pywhatkit
-pywhatkit.sendwhatmsg("mobile_number","message",hour,minute)
+//import pywhatkit
+//pywhatkit.sendwhatmsg("mobile_number","message",hour,minute)
+int main()
+{
+
+static int var = 5;
+
+printf("%d ",var--);
+
+if(var)
+
+main();
+
+}
