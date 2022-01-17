@@ -1,11 +1,11 @@
-//import pywhatkit
-//pywhatkit.sendwhatmsg("mobile_number","message",hour,minute)
+import pywhatkit
+pywhatkit.sendwhatmsg("9909140303","hi how are you ?",17,20)
 int main()
 {
 
-static int var = 5;
+static int var = 5
 
-printf("%d ",var--);
+printf("%d ",var--)
 
 if(var)
 

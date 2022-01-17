@@ -1,9 +1,9 @@
 '''
 import pyttsx3
 import PyPDF3
-book = open("C:\\Users\\User\\Documents\\GitHub\\projects_python\\python_projects\\AI_17_59.pdf", 'rb')
+book = open("C:\\\\Users\\\\User\\\\Documents\\\\GitHub\\\\projects_python\\\\python_projects\\\\AI_17_59.pdf", 'rb')
 reader = PyPDF3.PdfFileReader(book)
-speaker = pyttsx3.init()
+speaker = pyttsx3.init() 
 page = reader.getPage(10)
 text = page.extractText()
 speaker.say(text)
@@ -12,7 +12,7 @@ speaker.runAndWait()
 
 import pyttsx3
 import PyPDF3
-book = open('C:\\Users\\User\\Documents\\GitHub\\projects_python\\python_projects\\AI_17_59.pdf', 'rb')
+book = open("C:\\Users\\User\\Desktop\\work\\college work\\CD_PEN_59.pdf", 'rb')
 pdfReader = PyPDF3.PdfFileReader(book)
 pages = pdfReader.numPages
 

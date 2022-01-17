@@ -16,7 +16,8 @@ def initail_talk():
     engine.runAndWait()
     with sr.Microphone() as source:
         name = listener.listen(source)
-        
+
+
 def talk(text):
     engine.say(text)
     engine.runAndWait()

@@ -1,6 +1,10 @@
+#!C:\Users\User\AppData\Local\Programs\Python\Python38-32
+import cgitb
 import turtle
 import time
 import random
+cgitb.enable()
+start_response('200 OK', [('Content-Type', 'text/html')])
 score = 0
 high_score = 0
 delay = 0.1
